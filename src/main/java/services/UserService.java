@@ -4,122 +4,195 @@ import entities.User;
 import tools.Mydb;
 
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserService implements ICrud<User> {
+public class UserService {
 
-    @Override
+    private final Connection conn;
+
+    public UserService() {
+        this.conn = Mydb.getInstance().getConnection();
+    }
+
+    // ========================
+    // ADD
+    // ========================
+
     public void add(User user) throws SQLException {
-        String sql = "INSERT INTO users (first_name, last_name, email, password, phone, role, status) " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?)";
-        try (PreparedStatement pst = Mydb.getInstance().getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-            pst.setString(1, user.getFirstName());
-            pst.setString(2, user.getLastName());
-            pst.setString(3, user.getEmail());
-            pst.setString(4, user.getPassword());
-            pst.setString(5, user.getPhone());
-            pst.setString(6, user.getRole());
-            pst.setString(7, "PENDING");
+        String sql = """
+            INSERT INTO users
+              (first_name, last_name, email, password, phone,
+               address, city, postal_code, profile_photo, bio,
+               role, status, rating_average, documents,
+               created_at, updated_at)
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+            """;
+        PreparedStatement ps = conn.prepareStatement(
+                sql, Statement.RETURN_GENERATED_KEYS);
 
-            int affectedRows = pst.executeUpdate();
-            if (affectedRows == 0) {
-                throw new SQLException("L'ajout de l'utilisateur a échoué, aucune ligne affectée.");
-            }
+        ps.setString(1,  user.getFirstName());
+        ps.setString(2,  user.getLastName());
+        ps.setString(3,  user.getEmail());
+        ps.setString(4,  user.getPassword());
+        ps.setString(5,  user.getPhone());
+        ps.setString(6,  user.getAddress());
+        ps.setString(7,  user.getCity());
+        ps.setString(8,  user.getPostalCode());
+        ps.setString(9,  user.getProfilePhoto());
+        ps.setString(10, user.getBio());
+        ps.setString(11, user.getRole() != null
+                ? user.getRole().name() : "CLIENT");
+        ps.setString(12, user.getStatus() != null
+                ? user.getStatus().name() : "PENDING_EMAIL");
+        ps.setFloat(13,  user.getRatingAverage());
+        ps.setString(14, user.getDocuments());
+        ps.setTimestamp(15, Timestamp.valueOf(LocalDateTime.now()));
+        ps.setTimestamp(16, Timestamp.valueOf(LocalDateTime.now()));
 
-            try (ResultSet generatedKeys = pst.getGeneratedKeys()) {
-                if (generatedKeys.next()) {
-                    user.setId(generatedKeys.getInt(1));
-                }
-            }
-        }
+        ps.executeUpdate();
+        ResultSet keys = ps.getGeneratedKeys();
+        if (keys.next()) user.setId(keys.getInt(1));
+        ps.close();
     }
 
-    @Override
+    // ========================
+    // GET ALL
+    // ========================
+
     public List<User> getAll() throws SQLException {
-        String sql = "SELECT * FROM users";
-        List<User> users = new ArrayList<>();
-        try (PreparedStatement pst = Mydb.getInstance().getConnection().prepareStatement(sql);
-             ResultSet rs = pst.executeQuery()) {
-            while (rs.next()) {
-                users.add(mapResultSetToUser(rs));
-            }
-        }
-        return users;
+        List<User> list = new ArrayList<>();
+        Statement st = conn.createStatement();
+        ResultSet rs = st.executeQuery(
+                "SELECT * FROM users ORDER BY created_at DESC");
+        while (rs.next()) list.add(mapRow(rs));
+        rs.close();
+        st.close();
+        return list;
     }
 
-    @Override
+    // ========================
+    // GET BY ID
+    // ========================
+
     public User getById(int id) throws SQLException {
-        String sql = "SELECT * FROM users WHERE id = ?";
-        try (PreparedStatement pst = Mydb.getInstance().getConnection().prepareStatement(sql)) {
-            pst.setInt(1, id);
-            try (ResultSet rs = pst.executeQuery()) {
-                if (rs.next()) {
-                    return mapResultSetToUser(rs);
-                }
-            }
-        }
-        return null;
+        PreparedStatement ps = conn.prepareStatement(
+                "SELECT * FROM users WHERE id = ?");
+        ps.setInt(1, id);
+        ResultSet rs = ps.executeQuery();
+        User user = rs.next() ? mapRow(rs) : null;
+        rs.close();
+        ps.close();
+        return user;
     }
 
-    @Override
+    // ========================
+    // GET BY STATUS
+    // ========================
+
+    public List<User> getUsersByStatus(String status) throws SQLException {
+        List<User> list = new ArrayList<>();
+        PreparedStatement ps = conn.prepareStatement(
+                "SELECT * FROM users WHERE status = ?");
+        ps.setString(1, status);
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) list.add(mapRow(rs));
+        rs.close();
+        ps.close();
+        return list;
+    }
+
+    // ========================
+    // GET BY ROLE
+    // ========================
+
+    public List<User> getUsersByRole(String role) throws SQLException {
+        List<User> list = new ArrayList<>();
+        PreparedStatement ps = conn.prepareStatement(
+                "SELECT * FROM users WHERE role = ?");
+        ps.setString(1, role);
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) list.add(mapRow(rs));
+        rs.close();
+        ps.close();
+        return list;
+    }
+
+    // ========================
+    // UPDATE
+    // ========================
+
     public void update(User user) throws SQLException {
-        String sql = "UPDATE users SET first_name = ?, last_name = ?, email = ?, password = ?, phone = ?, role = ?, status = ? WHERE id = ?";
-        try (PreparedStatement pst = Mydb.getInstance().getConnection().prepareStatement(sql)) {
-            pst.setString(1, user.getFirstName());
-            pst.setString(2, user.getLastName());
-            pst.setString(3, user.getEmail());
-            pst.setString(4, user.getPassword());
-            pst.setString(5, user.getPhone());
-            pst.setString(6, user.getRole());
-            pst.setString(7, user.getStatus());
-            pst.setInt(8, user.getId());
-
-            pst.executeUpdate();
-        }
+        String sql = """
+            UPDATE users SET
+              first_name=?, last_name=?, email=?, phone=?,
+              address=?, city=?, postal_code=?, profile_photo=?,
+              bio=?, role=?, status=?, documents=?, updated_at=?
+            WHERE id=?
+            """;
+        PreparedStatement ps = conn.prepareStatement(sql);
+        ps.setString(1,  user.getFirstName());
+        ps.setString(2,  user.getLastName());
+        ps.setString(3,  user.getEmail());
+        ps.setString(4,  user.getPhone());
+        ps.setString(5,  user.getAddress());
+        ps.setString(6,  user.getCity());
+        ps.setString(7,  user.getPostalCode());
+        ps.setString(8,  user.getProfilePhoto());
+        ps.setString(9,  user.getBio());
+        ps.setString(10, user.getRole().name());
+        ps.setString(11, user.getStatus().name());
+        ps.setString(12, user.getDocuments());
+        ps.setTimestamp(13, Timestamp.valueOf(LocalDateTime.now()));
+        ps.setInt(14, user.getId());
+        ps.executeUpdate();
+        ps.close();
     }
 
-    @Override
+    // ========================
+    // DELETE
+    // ========================
+
     public void delete(int id) throws SQLException {
-        String sql = "DELETE FROM users WHERE id = ?";
-        try (PreparedStatement pst = Mydb.getInstance().getConnection().prepareStatement(sql)) {
-            pst.setInt(1, id);
-            pst.executeUpdate();
-        }
+        PreparedStatement ps = conn.prepareStatement(
+                "DELETE FROM users WHERE id = ?");
+        ps.setInt(1, id);
+        ps.executeUpdate();
+        ps.close();
     }
+
+    // ========================
+    // ACTIONS ADMIN
+    // ========================
 
     public void approveUser(int id) throws SQLException {
-        changeStatus(id, "APPROVED");
+        updateStatus(id, "APPROVED");
     }
 
     public void rejectUser(int id) throws SQLException {
-        changeStatus(id, "REJECTED");
+        updateStatus(id, "REJECTED");
     }
 
-    public List<User> getUsersByStatus(String status) throws SQLException {
-        String sql = "SELECT * FROM users WHERE status = ?";
-        List<User> users = new ArrayList<>();
-        try (PreparedStatement pst = Mydb.getInstance().getConnection().prepareStatement(sql)) {
-            pst.setString(1, status);
-            try (ResultSet rs = pst.executeQuery()) {
-                while (rs.next()) {
-                    users.add(mapResultSetToUser(rs));
-                }
-            }
-        }
-        return users;
+    public void suspendUser(int id) throws SQLException {
+        updateStatus(id, "SUSPENDED");
     }
 
-    private void changeStatus(int id, String status) throws SQLException {
-        String sql = "UPDATE users SET status = ? WHERE id = ?";
-        try (PreparedStatement pst = Mydb.getInstance().getConnection().prepareStatement(sql)) {
-            pst.setString(1, status);
-            pst.setInt(2, id);
-            pst.executeUpdate();
-        }
+    private void updateStatus(int id, String status) throws SQLException {
+        PreparedStatement ps = conn.prepareStatement(
+                "UPDATE users SET status=?, updated_at=? WHERE id=?");
+        ps.setString(1, status);
+        ps.setTimestamp(2, Timestamp.valueOf(LocalDateTime.now()));
+        ps.setInt(3, id);
+        ps.executeUpdate();
+        ps.close();
     }
 
-    private User mapResultSetToUser(ResultSet rs) throws SQLException {
+    // ========================
+    // MAPPER
+    // ========================
+
+    private User mapRow(ResultSet rs) throws SQLException {
         return new User(
                 rs.getInt("id"),
                 rs.getString("first_name"),
@@ -127,8 +200,23 @@ public class UserService implements ICrud<User> {
                 rs.getString("email"),
                 rs.getString("password"),
                 rs.getString("phone"),
+                rs.getString("address"),
+                rs.getString("city"),
+                rs.getString("postal_code"),
+                rs.getString("profile_photo"),
+                rs.getString("bio"),
                 rs.getString("role"),
-                rs.getString("status")
+                rs.getString("status"),
+                rs.getFloat("rating_average"),
+                rs.getString("documents"),
+                rs.getTimestamp("email_verified_at") != null
+                        ? rs.getTimestamp("email_verified_at").toLocalDateTime() : null,
+                rs.getTimestamp("last_login_at") != null
+                        ? rs.getTimestamp("last_login_at").toLocalDateTime() : null,
+                rs.getTimestamp("created_at") != null
+                        ? rs.getTimestamp("created_at").toLocalDateTime() : null,
+                rs.getTimestamp("updated_at") != null
+                        ? rs.getTimestamp("updated_at").toLocalDateTime() : null
         );
     }
 }
