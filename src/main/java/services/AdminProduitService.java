@@ -1,0 +1,72 @@
+
+package services;
+
+import entities.Produit;
+import tools.Mydb;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class AdminProduitService {
+
+
+    public List<Produit> getAll() throws SQLException {
+        String sql = "SELECT * FROM produits";
+        List<Produit> list = new ArrayList<>();
+        try (PreparedStatement pst = Mydb.getInstance().getConnection().prepareStatement(sql);
+             ResultSet rs = pst.executeQuery()) {
+            while (rs.next()) list.add(map(rs));
+        }
+        return list;
+    }
+
+
+    public List<Produit> getEnAttente() throws SQLException {
+        String sql = "SELECT * FROM produits WHERE statut = 'en_attente'";
+        List<Produit> list = new ArrayList<>();
+        try (PreparedStatement pst = Mydb.getInstance().getConnection().prepareStatement(sql);
+             ResultSet rs = pst.executeQuery()) {
+            while (rs.next()) list.add(map(rs));
+        }
+        return list;
+    }
+
+
+    public void approuver(int produitId) throws SQLException {
+        String sql = "UPDATE produits SET statut='approuvé' WHERE id_produit=?";
+        try (PreparedStatement pst = Mydb.getInstance().getConnection().prepareStatement(sql)) {
+            pst.setInt(1, produitId);
+            pst.executeUpdate();
+        }
+    }
+
+
+    public void refuser(int produitId) throws SQLException {
+        String sql = "UPDATE produits SET statut='refusé' WHERE id_produit=?";
+        try (PreparedStatement pst = Mydb.getInstance().getConnection().prepareStatement(sql)) {
+            pst.setInt(1, produitId);
+            pst.executeUpdate();
+        }
+    }
+
+
+    public void supprimer(int produitId) throws SQLException {
+        String sql = "DELETE FROM produits WHERE id_produit=?";
+        try (PreparedStatement pst = Mydb.getInstance().getConnection().prepareStatement(sql)) {
+            pst.setInt(1, produitId);
+            pst.executeUpdate();
+        }
+    }
+
+
+    private Produit map(ResultSet rs) throws SQLException {
+        return new Produit(
+                rs.getInt("id_produit"),
+                rs.getString("nom_produit"),
+                rs.getString("description"),
+                rs.getFloat("prix"),
+                rs.getInt("stock"),
+                rs.getDate("date_ajout").toLocalDate()
+        );
+    }
+}

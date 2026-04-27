@@ -11,7 +11,7 @@ import java.util.List;
 public class ProduitService {
 
     public void add(Produit p, int userId) throws SQLException {
-        String sql = "INSERT INTO produits (nom_produit, description, prix, stock, date_ajout,user_id) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO produits (nom_produit, description, prix, stock, date_ajout, user_id, statut) VALUES (?, ?, ?, ?, ?, ?, 'en_attente')";
 
         try (PreparedStatement pst = Mydb.getInstance().getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             pst.setString(1, p.getNom());
@@ -54,7 +54,7 @@ public class ProduitService {
     }
 
     public List<Produit> getAll() throws SQLException {
-        String sql = "SELECT * FROM produits";
+        String sql = "SELECT * FROM produits WHERE statut = 'approuvé'";
         List<Produit> list = new ArrayList<>();
 
         try (PreparedStatement pst = Mydb.getInstance().getConnection().prepareStatement(sql);
@@ -68,7 +68,7 @@ public class ProduitService {
     }
 
     public Produit getById(int id) throws SQLException {
-        String sql = "SELECT * FROM produits WHERE id_produit = ?";
+        String sql = "SELECT * FROM produits WHERE id_produit = ? AND statut = 'approuvé'";
 
         try (PreparedStatement pst = Mydb.getInstance().getConnection().prepareStatement(sql)) {
             pst.setInt(1, id);
@@ -80,6 +80,18 @@ public class ProduitService {
         return null;
     }
 
+    public List<Produit> getMesProduits(int userId) throws SQLException {
+        String sql = "SELECT * FROM produits WHERE user_id = ?";
+        List<Produit> list = new ArrayList<>();
+
+        try (PreparedStatement pst = Mydb.getInstance().getConnection().prepareStatement(sql)) {
+            pst.setInt(1, userId);
+            try (ResultSet rs = pst.executeQuery()) {
+                while (rs.next()) list.add(map(rs));
+            }
+        }
+        return list;
+    }
 
 
     private Produit map(ResultSet rs) throws SQLException {
