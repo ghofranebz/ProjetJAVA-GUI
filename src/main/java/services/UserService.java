@@ -16,9 +16,9 @@ public class UserService {
         this.conn = Mydb.getInstance().getConnection();
     }
 
-    // ========================
+
     // ADD
-    // ========================
+
 
     public void add(User user) throws SQLException {
         String sql = """
@@ -57,9 +57,9 @@ public class UserService {
         ps.close();
     }
 
-    // ========================
+
     // GET ALL
-    // ========================
+
 
     public List<User> getAll() throws SQLException {
         List<User> list = new ArrayList<>();
@@ -72,9 +72,9 @@ public class UserService {
         return list;
     }
 
-    // ========================
+
     // GET BY ID
-    // ========================
+
 
     public User getById(int id) throws SQLException {
         PreparedStatement ps = conn.prepareStatement(
@@ -87,9 +87,9 @@ public class UserService {
         return user;
     }
 
-    // ========================
+
     // GET BY STATUS
-    // ========================
+
 
     public List<User> getUsersByStatus(String status) throws SQLException {
         List<User> list = new ArrayList<>();
@@ -103,9 +103,9 @@ public class UserService {
         return list;
     }
 
-    // ========================
+
     // GET BY ROLE
-    // ========================
+
 
     public List<User> getUsersByRole(String role) throws SQLException {
         List<User> list = new ArrayList<>();
@@ -119,9 +119,9 @@ public class UserService {
         return list;
     }
 
-    // ========================
+
     // UPDATE
-    // ========================
+
 
     public void update(User user) throws SQLException {
         String sql = """
@@ -150,9 +150,9 @@ public class UserService {
         ps.close();
     }
 
-    // ========================
+
     // DELETE
-    // ========================
+
 
     public void delete(int id) throws SQLException {
         PreparedStatement ps = conn.prepareStatement(
@@ -162,9 +162,9 @@ public class UserService {
         ps.close();
     }
 
-    // ========================
-    // ACTIONS ADMIN
-    // ========================
+
+    // actions admin
+
 
     public void approveUser(int id) throws SQLException {
         updateStatus(id, "APPROVED");
@@ -188,9 +188,9 @@ public class UserService {
         ps.close();
     }
 
-    // ========================
-    // MAPPER
-    // ========================
+
+    // maprow(con ligne sql > obj java)
+
 
     private User mapRow(ResultSet rs) throws SQLException {
         return new User(
