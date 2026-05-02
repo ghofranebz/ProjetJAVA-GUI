@@ -4,7 +4,50 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="986cfb1b-24c2-4c45-90bb-50e8689fc35b" name="Changes" comment="" />
+    <list default="true" id="986cfb1b-24c2-4c45-90bb-50e8689fc35b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Categorie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Commande.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Favoris.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entities/PanierItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Produit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entities/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/TestAdmin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/TestCommandeCRUD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/TestFavorisCRUD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/TestPanierCRUD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/TestProduitCRUD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/TestUserCRUD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/tools/Mydb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/AdminCategorieService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/AdminCommandeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/AdminProduitService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/CommandeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/FavorisService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/ICrud.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/PanierService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/ProduitService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/Produit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/Produit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/TestAdmin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/TestAdmin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/TestFavorisCRUD.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/TestFavorisCRUD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/TestPanierCRUD.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/TestPanierCRUD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/TestProduitCRUD.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/TestProduitCRUD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/TestUserCRUD.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/TestUserCRUD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/AdminCategorieService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/AdminCategorieService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/CommandeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/CommandeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/FavorisService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/FavorisService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/PanierService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/PanierService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/ProduitService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/ProduitService.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,13 +66,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/ghofranebz/ProjetGUI.git",
+    "accountId": "aa9d9786-d50a-4187-a323-0b21d150d002"
+  }
+}]]></component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="3DAq22eJawAJ76vVQMvGi5DvDvr" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -49,7 +98,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "#1 on Shop-lina",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/linah/IdeaProjects/ProjetGuI/src/main",
