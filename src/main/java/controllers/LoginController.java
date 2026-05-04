@@ -11,19 +11,19 @@ import javafx.stage.Stage;
 import services.UserService;
 
 import java.sql.SQLException;
-import java.util.List;
+import java.util.Optional;
 
 public class LoginController {
 
     private Stage stage;
-    private BorderPane root;  // layout principal de cette page
+    private BorderPane root;
 
     // ──────────────────────────────────────────────────
     // CONSTRUCTEUR
     // ──────────────────────────────────────────────────
     public LoginController(Stage stage) {
         this.stage = stage;
-        buildUI();  // construit l'interface
+        buildUI();
     }
 
     // ──────────────────────────────────────────────────
@@ -31,7 +31,6 @@ public class LoginController {
     // ──────────────────────────────────────────────────
     private void buildUI() {
 
-        // BorderPane = layout avec zones : Left / Center / Right / Top / Bottom
         root = new BorderPane();
         root.setStyle("-fx-background-color: #dad8cd;");
 
@@ -70,7 +69,6 @@ public class LoginController {
         rightPanel.setPadding(new Insets(60, 80, 60, 80));
         rightPanel.setStyle("-fx-background-color: white;");
 
-        // Titre du formulaire
         Label title = new Label("Connexion");
         title.setFont(Font.font("Segoe UI", FontWeight.BOLD, 30));
         title.setTextFill(Color.web("#0e3960"));
@@ -79,26 +77,21 @@ public class LoginController {
         subtitle.setFont(Font.font("Segoe UI", 13));
         subtitle.setTextFill(Color.GRAY);
 
-        // Champ Email
         Label emailLbl = makeLabel("Adresse Email");
         TextField emailField = makeTextField("exemple@email.com");
 
-        // Champ Mot de passe
         Label passLbl = makeLabel("Mot de passe");
         PasswordField passField = new PasswordField();
         passField.setPromptText("••••••••");
         styleInput(passField);
 
-        // Message d'erreur (invisible au départ)
         Label errorLbl = new Label("");
         errorLbl.setTextFill(Color.RED);
         errorLbl.setFont(Font.font("Segoe UI", 12));
 
-        // Bouton Se connecter
         Button loginBtn = makeButton("Se connecter", "#0e3960");
-        loginBtn.setMaxWidth(Double.MAX_VALUE); // prend toute la largeur
+        loginBtn.setMaxWidth(Double.MAX_VALUE);
 
-        // Lien vers inscription
         Hyperlink registerLink = new Hyperlink("Pas de compte ? S'inscrire");
         registerLink.setTextFill(Color.web("#bd936b"));
         registerLink.setStyle("-fx-border-color: transparent;");
@@ -107,27 +100,23 @@ public class LoginController {
         // ACTIONS
         // ════════════════════════════════════════
 
-        // Clic sur "Se connecter"
         loginBtn.setOnAction(e -> {
             String email = emailField.getText().trim();
             String pass  = passField.getText().trim();
 
-            // Validation basique
             if (email.isEmpty() || pass.isEmpty()) {
                 errorLbl.setText("⚠ Veuillez remplir tous les champs.");
+                return;
+            }
+            if (!email.contains("@") || !email.contains(".")) {
+                errorLbl.setText("⚠ Format d'email invalide.");
                 return;
             }
 
             try {
                 UserService us = new UserService();
-                List<User> users = us.getAll();
-
-                // Chercher l'user avec cet email + mot de passe
-                User found = users.stream()
-                        .filter(u -> u.getEmail().equals(email)
-                                && u.getPassword().equals(pass))
-                        .findFirst()
-                        .orElse(null);
+                Optional<User> foundOpt = us.findByEmailAndPassword(email, pass);
+                User found = foundOpt.orElse(null);
 
                 if (found == null) {
                     errorLbl.setText("❌ Email ou mot de passe incorrect.");
@@ -136,7 +125,6 @@ public class LoginController {
                     errorLbl.setText("⏳ Compte en attente de validation admin.");
 
                 } else {
-                    // Redirection selon le rôle
                     if (found.getRole() == User.Role.ADMIN) {
                         AdminController admin = new AdminController(stage, found);
                         stage.getScene().setRoot(admin.getView());
@@ -152,13 +140,11 @@ public class LoginController {
             }
         });
 
-        // Clic sur "S'inscrire"
         registerLink.setOnAction(e -> {
             RegisterController reg = new RegisterController(stage);
             stage.getScene().setRoot(reg.getView());
         });
 
-        // Ajouter tous les éléments au panneau droit
         rightPanel.getChildren().addAll(
                 title,
                 subtitle,
@@ -169,14 +155,10 @@ public class LoginController {
                 registerLink
         );
 
-        // Mettre les deux panneaux dans le BorderPane
         root.setLeft(leftPanel);
         root.setCenter(rightPanel);
     }
 
-    // ──────────────────────────────────────────────────
-    // RETOURNE LA VUE (utilisé dans MainFX et navigation)
-    // ──────────────────────────────────────────────────
     public BorderPane getView() {
         return root;
     }
@@ -198,7 +180,6 @@ public class LoginController {
         return tf;
     }
 
-    // Applique le même style à TextField ET PasswordField
     private void styleInput(Control c) {
         c.setStyle("""
             -fx-background-color: #f5f4f1;
