@@ -1,4 +1,4 @@
-package main;
+/*package main;
 
 import entities.Commande;
 import services.CommandeService;
@@ -46,4 +46,4 @@ public class TestCommandeCRUD {
             e.printStackTrace();
         }
     }
-}
+}*/

@@ -1,0 +1,1757 @@
+/* Theme premium : fond blanc, bleu charte conservé (#0e3960) */
+.app-root {
+    -fx-background-color: #ffffff;
+}
+
+.sidebar {
+    -fx-background-color: #0e3960;
+    -fx-min-width: 220px;
+    -fx-max-width: 220px;
+}
+
+.sidebar-header {
+    -fx-padding: 30 20 20 20;
+}
+
+.logo-title {
+    -fx-text-fill: white;
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+}
+
+.logo-subtitle {
+    -fx-text-fill: #bd936b;
+    -fx-font-size: 12px;
+}
+
+.menu-container {
+    -fx-padding: 15 0 0 0;
+    -fx-spacing: 2;
+}
+
+.menu-item-parent {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 12 20 12 20;
+    -fx-cursor: hand;
+    -fx-background-radius: 0;
+}
+
+.menu-item-parent:hover {
+    -fx-background-color: rgba(255,255,255,0.1);
+}
+
+.submenu-item {
+    -fx-background-color: rgba(0,0,0,0.15);
+    -fx-text-fill: rgba(255,255,255,0.75);
+    -fx-font-size: 13px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10 20 10 20;
+    -fx-cursor: hand;
+    -fx-background-radius: 0;
+}
+
+.submenu-item:hover {
+    -fx-background-color: rgba(255,255,255,0.1);
+    -fx-text-fill: white;
+}
+
+.sidebar-footer {
+    -fx-padding: 15 20 20 20;
+    -fx-spacing: 10;
+}
+
+.user-avatar {
+    -fx-font-size: 22px;
+}
+
+.user-name {
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.user-role {
+    -fx-text-fill: #bd936b;
+    -fx-font-size: 11px;
+}
+
+.main-content {
+    -fx-background-color: #ffffff;
+}
+
+/* Bandeau de page : carte légère au-dessus du fond beige (même palette) */
+.page-header {
+    -fx-background-color: rgba(255, 255, 255, 0.92);
+    -fx-background-radius: 0 0 18 18;
+    -fx-padding: 18 28 18 28;
+    -fx-effect: dropshadow(gaussian, rgba(14, 57, 96, 0.08), 12, 0, 0, 4);
+}
+
+.section-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0e3960;
+}
+
+/* Zone scroll : fond aligné avec le reste */
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* Carte générique pour blocs de contenu (formulaires, récap, etc.) */
+.surface-card {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.08), 18, 0.1, 0, 6);
+}
+
+.welcome-title {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0e3960;
+}
+
+.welcome-subtitle {
+    -fx-font-size: 15px;
+    -fx-text-fill: #777;
+}
+
+.page-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0e3960;
+}
+
+.page-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #888;
+}
+
+.btn-primary {
+    -fx-background-color: #bd936b;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 10 20 10 20;
+    -fx-cursor: hand;
+}
+
+.btn-primary:hover {
+    -fx-background-color: #a67d58;
+}
+
+.btn-secondary {
+    -fx-background-color: transparent;
+    -fx-text-fill: #0e3960;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 10 20 10 20;
+    -fx-cursor: hand;
+    -fx-border-color: #0e3960;
+    -fx-border-radius: 8;
+    -fx-border-width: 1.5;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #0e3960;
+    -fx-text-fill: white;
+}
+
+/* Toast notifications */
+.toast {
+    -fx-background-color: rgba(15, 23, 42, 0.92);
+    -fx-background-radius: 14;
+    -fx-padding: 12 14 12 14;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.22), 26, 0.12, 0, 10);
+    -fx-max-width: 340;
+}
+
+.toast-text {
+    -fx-text-fill: white;
+    -fx-font-size: 12.5px;
+}
+
+.toast-success { -fx-background-color: rgba(14, 57, 96, 0.92); }
+.toast-info { -fx-background-color: rgba(15, 23, 42, 0.92); }
+.toast-error { -fx-background-color: rgba(231, 76, 60, 0.92); }
+
+.btn-danger {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 8 15 8 15;
+    -fx-cursor: hand;
+}
+
+.btn-danger:hover {
+    -fx-background-color: #c0392b;
+}
+
+.search-field {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 20;
+    -fx-padding: 8 15 8 15;
+    -fx-font-size: 13px;
+    -fx-pref-width: 260;
+}
+
+.search-field:focused {
+    -fx-border-color: #bd936b;
+}
+
+.product-card {
+    -fx-background-color: white;
+    -fx-background-radius: 18;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.10), 22, 0.12, 0, 8);
+    -fx-padding: 16;
+    -fx-border-color: rgba(15, 23, 42, 0.08);
+    -fx-border-radius: 18;
+    -fx-border-width: 1;
+}
+
+/* Carte produit cliquable (boutique / sélection) */
+.product-card-interactive {
+    -fx-cursor: hand;
+}
+
+.product-card-interactive:hover {
+    -fx-effect: dropshadow(gaussian, rgba(189, 147, 107, 0.35), 18, 0, 0, 6);
+    -fx-border-color: rgba(189, 147, 107, 0.45);
+}
+
+.product-name {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0e3960;
+    -fx-wrap-text: true;
+}
+
+.product-price {
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0e3960;
+}
+
+.product-desc {
+    -fx-font-size: 12px;
+    -fx-text-fill: #888;
+    -fx-wrap-text: true;
+}
+
+.table-view .column-header {
+    -fx-background-color: #0e3960;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.form-label {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #444;
+}
+
+.text-field-styled {
+    -fx-background-color: #f5f5f5;
+    -fx-background-radius: 8;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 8;
+    -fx-padding: 9 12 9 12;
+    -fx-font-size: 13px;
+}
+
+.text-field-styled:focused {
+    -fx-border-color: #bd936b;
+    -fx-background-color: white;
+}
+.icon-btn {
+    -fx-background-color: #0e3960;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-background-radius: 50;
+    -fx-min-width: 45px;
+    -fx-min-height: 45px;
+    -fx-cursor: hand;
+}
+
+.icon-btn:hover {
+    -fx-background-color: #bd936b;
+}
+
+/* ========== Page Boutique (maquette moderne, mêmes couleurs) ========== */
+
+.shop-page {
+    -fx-spacing: 0;
+}
+
+.shop-header-card {
+    -fx-background-color: rgba(255, 255, 255, 0.96);
+    -fx-background-radius: 0 0 18 18;
+    -fx-padding: 22 32 18 32;
+    -fx-effect: dropshadow(gaussian, rgba(14, 57, 96, 0.06), 14, 0, 0, 3);
+}
+
+.shop-header-top {
+    -fx-alignment: center-left;
+}
+
+.shop-hero-title {
+    -fx-font-size: 38px;
+    -fx-font-family: "Segoe UI Light", "Segoe UI", system-ui, sans-serif;
+    -fx-font-weight: normal;
+    -fx-letter-spacing: 0.06em;
+    -fx-text-fill: #0e3960;
+}
+
+.shop-hero-subtitle {
+    -fx-font-size: 13px;
+    -fx-font-family: "Segoe UI", system-ui, sans-serif;
+    -fx-text-fill: #777;
+    -fx-opacity: 0.92;
+}
+
+.search-field-shop {
+    -fx-background-color: white;
+    -fx-background-radius: 24;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 24;
+    -fx-padding: 10 18 10 18;
+    -fx-font-size: 13px;
+    -fx-pref-width: 260;
+    -fx-max-width: 320;
+}
+
+.search-field-shop:focused {
+    -fx-border-color: #bd936b;
+}
+
+.combo-sort-shop {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-border-color: transparent transparent #ccc transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-radius: 0;
+    -fx-pref-width: 210;
+    -fx-font-size: 12px;
+    -fx-font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.combo-sort-shop:hover {
+    -fx-border-color: transparent transparent #0e3960 transparent;
+}
+
+.search-wrap {
+    -fx-alignment: center-left;
+}
+
+.icon-fill-white {
+    -fx-fill: white;
+}
+
+.icon-fill-blue {
+    -fx-fill: #0e3960;
+}
+
+.icon-fill-navy {
+    -fx-fill: #0e3960;
+}
+
+.btn-search-retail {
+    -fx-background-color: #f4f3ef;
+    -fx-background-radius: 14;
+    -fx-min-width: 48px;
+    -fx-min-height: 48px;
+    -fx-max-width: 48px;
+    -fx-max-height: 48px;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+    -fx-border-color: rgba(14, 57, 96, 0.06);
+    -fx-border-radius: 14;
+    -fx-border-width: 1;
+}
+
+.btn-search-retail:hover {
+    -fx-background-color: #eae9e3;
+    -fx-border-color: rgba(14, 57, 96, 0.14);
+}
+
+.btn-retail-fav {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-min-width: 48px;
+    -fx-min-height: 48px;
+    -fx-max-width: 48px;
+    -fx-max-height: 48px;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+    -fx-border-color: rgba(14, 57, 96, 0.14);
+    -fx-border-radius: 14;
+    -fx-border-width: 1;
+}
+
+.btn-retail-fav:hover {
+    -fx-background-color: rgba(189, 147, 107, 0.14);
+    -fx-border-color: rgba(189, 147, 107, 0.55);
+}
+
+.btn-retail-cart {
+    -fx-background-color: #0e3960;
+    -fx-background-radius: 14;
+    -fx-min-width: 48px;
+    -fx-min-height: 48px;
+    -fx-max-width: 48px;
+    -fx-max-height: 48px;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+}
+
+.btn-retail-cart:hover {
+    -fx-background-color: #bd936b;
+}
+
+.cart-badge-retail {
+    -fx-background-color: #bd936b;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 10px;
+    -fx-padding: 2 7 2 7;
+    -fx-background-radius: 11;
+    -fx-border-radius: 11;
+    -fx-translate-x: 16;
+    -fx-translate-y: -15;
+}
+
+.btn-header-outline {
+    -fx-background-color: white;
+    -fx-text-fill: #0e3960;
+    -fx-font-weight: bold;
+    -fx-background-radius: 22;
+    -fx-padding: 10 18 10 18;
+    -fx-cursor: hand;
+    -fx-border-color: #0e3960;
+    -fx-border-radius: 22;
+    -fx-border-width: 1.5;
+}
+
+.btn-header-outline:hover {
+    -fx-background-color: #0e3960;
+    -fx-text-fill: white;
+}
+
+.btn-header-solid {
+    -fx-background-color: #0e3960;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 22;
+    -fx-padding: 10 22 10 22;
+    -fx-cursor: hand;
+}
+
+.btn-header-solid:hover {
+    -fx-background-color: #bd936b;
+}
+
+.shop-category-bar {
+    -fx-padding: 4 0 0 0;
+    -fx-spacing: 8;
+}
+
+.category-pill {
+    -fx-background-color: transparent;
+    -fx-text-fill: #444;
+    -fx-font-size: 11px;
+    -fx-font-weight: normal;
+    -fx-letter-spacing: 0.14em;
+    -fx-background-radius: 0;
+    -fx-padding: 10 4 10 4;
+    -fx-cursor: hand;
+    -fx-border-color: transparent transparent rgba(0, 0, 0, 0.14) transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-radius: 0;
+}
+
+.category-pill:hover {
+    -fx-text-fill: #0e3960;
+    -fx-border-color: transparent transparent #0e3960 transparent;
+}
+
+.category-pill-active {
+    -fx-background-color: transparent;
+    -fx-text-fill: #0e3960;
+    -fx-font-weight: bold;
+    -fx-border-color: transparent transparent #bd936b transparent;
+    -fx-border-width: 0 0 2 0;
+}
+
+.category-pill-active:hover {
+    -fx-background-color: transparent;
+    -fx-text-fill: #0e3960;
+}
+
+.shop-grid-wrap {
+    -fx-background-color: transparent;
+}
+
+/* Espace de sécurité autour de chaque carte : évite que le scale hover ne fasse
+   chevaucher les voisins (sinon une carte « en dessous » ne reçoit jamais mouseEntered). */
+.shop-product-card-slot {
+    -fx-background-color: transparent;
+    -fx-padding: 8 12 8 12;
+}
+
+.shop-product-card {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 105%, #ffffff 0%, #fafaf8 100%);
+    -fx-background-radius: 18;
+    -fx-padding: 14 14 16 14;
+    -fx-spacing: 6;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.07), 20, 0, 0, 6);
+    -fx-border-color: rgba(14, 57, 96, 0.07);
+    -fx-border-radius: 18;
+    -fx-border-width: 1;
+}
+
+.shop-product-card:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(14, 57, 96, 0.14), 26, 0, 0, 10);
+    -fx-border-color: rgba(189, 147, 107, 0.38);
+}
+
+.shop-image-shell {
+    -fx-background-color: #e8e6dc;
+    -fx-background-radius: 14;
+}
+
+.shop-image-placeholder {
+    -fx-font-size: 40px;
+    -fx-text-fill: rgba(14, 57, 96, 0.25);
+}
+
+.shop-badge-new {
+    -fx-background-color: rgba(189, 147, 107, 0.95);
+    -fx-text-fill: white;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-padding: 4 10 4 10;
+    -fx-background-radius: 10;
+}
+
+.shop-card-fav-btn {
+    -fx-background-color: rgba(255, 255, 255, 0.92);
+    -fx-background-radius: 12;
+    -fx-min-width: 40px;
+    -fx-min-height: 40px;
+    -fx-max-width: 40px;
+    -fx-max-height: 40px;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+    -fx-border-color: rgba(14, 57, 96, 0.12);
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+}
+
+.shop-card-fav-btn:hover {
+    -fx-background-color: white;
+    -fx-border-color: rgba(189, 147, 107, 0.65);
+}
+
+/* Cœur vectoriel (lisible sur fond blanc — le PNG pouvait être blanc / invisible) */
+.shop-card-heart-svg {
+    -fx-fill: #d64545;
+}
+
+.shop-product-category {
+    -fx-font-size: 11px;
+    -fx-text-fill: #999;
+    -fx-letter-spacing: 0.04em;
+}
+
+.shop-product-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0e3960;
+}
+
+.shop-product-price {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0e3960;
+}
+
+.shop-product-stock {
+    -fx-font-size: 11px;
+    -fx-text-fill: #aaa;
+}
+
+.btn-add-cart {
+    -fx-background-color: transparent;
+    -fx-text-fill: #0e3960;
+    -fx-font-weight: normal;
+    -fx-letter-spacing: 0.12em;
+    -fx-background-radius: 0;
+    -fx-padding: 10 0 10 0;
+    -fx-cursor: hand;
+    -fx-font-size: 11px;
+    -fx-border-color: transparent transparent #0e3960 transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.btn-add-cart:hover {
+    -fx-background-color: rgba(14, 57, 96, 0.06);
+    -fx-border-color: transparent transparent #bd936b transparent;
+}
+
+.shop-hover-hint {
+    -fx-font-size: 10px;
+    -fx-letter-spacing: 0.14em;
+    -fx-text-fill: rgba(255, 255, 255, 0.95);
+    -fx-background-color: rgba(14, 57, 96, 0.52);
+    -fx-background-radius: 8;
+    -fx-padding: 5 12 5 12;
+}
+
+.shop-card-expanded {
+    -fx-background-color: rgba(248, 246, 241, 0.97);
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(189, 147, 107, 0.38);
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+    -fx-padding: 10 10 12 10;
+}
+
+.shop-expanded-scroll {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.shop-expanded-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.shop-expanded-thumb {
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.12), 6, 0, 0, 1);
+    -fx-cursor: hand;
+}
+
+.shop-expanded-thumb:hover {
+    -fx-effect: dropshadow(gaussian, rgba(14, 57, 96, 0.35), 10, 0, 0, 2);
+}
+
+.shop-expanded-desc {
+    -fx-font-size: 12px;
+    -fx-text-fill: #444;
+}
+
+.shop-expanded-meta {
+    -fx-font-size: 11px;
+    -fx-text-fill: #888;
+}
+
+.shop-thumbs {
+    -fx-background-color: rgba(255, 255, 255, 0.85);
+    -fx-background-radius: 10;
+    -fx-padding: 6;
+}
+
+.shop-thumb {
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-color: rgba(14, 57, 96, 0.12);
+    -fx-border-width: 1;
+    -fx-cursor: hand;
+}
+
+.shop-thumb:hover {
+    -fx-border-color: rgba(189, 147, 107, 0.7);
+}
+
+/* ========== Style boutique minimaliste (Favoris / Panier / accents retail) ========== */
+
+.retail-page {
+    -fx-spacing: 0;
+    -fx-background-color: transparent;
+}
+
+.retail-toolbar {
+    -fx-background-color: rgba(255, 255, 255, 0.96);
+    -fx-padding: 18 36 22 36;
+    -fx-effect: dropshadow(gaussian, rgba(14, 57, 96, 0.06), 14, 0, 0, 3);
+}
+
+.retail-scroll {
+    -fx-background-color: transparent;
+}
+
+.retail-content-padding {
+    -fx-spacing: 0;
+}
+
+.btn-retail-back {
+    -fx-background-color: transparent;
+    -fx-background-radius: 14;
+    -fx-min-width: 46px;
+    -fx-min-height: 46px;
+    -fx-max-width: 46px;
+    -fx-max-height: 46px;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+}
+
+.btn-retail-back:hover {
+    -fx-background-color: rgba(14, 57, 96, 0.06);
+}
+
+.retail-hero-kicker {
+    -fx-font-size: 11px;
+    -fx-letter-spacing: 0.22em;
+    -fx-text-fill: #888;
+}
+
+.retail-hero-title {
+    -fx-font-size: 32px;
+    -fx-font-family: "Segoe UI Light", "Segoe UI", system-ui, sans-serif;
+    -fx-font-weight: normal;
+    -fx-text-fill: #0e3960;
+    -fx-letter-spacing: 0.04em;
+}
+
+.retail-hero-sub {
+    -fx-font-size: 13px;
+    -fx-text-fill: #777;
+}
+
+.btn-retail-text-muted {
+    -fx-background-color: transparent;
+    -fx-text-fill: #777;
+    -fx-font-size: 11px;
+    -fx-letter-spacing: 0.12em;
+    -fx-underline: false;
+    -fx-padding: 8 12 8 12;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+}
+
+.btn-retail-text-muted:hover {
+    -fx-text-fill: #bd936b;
+}
+
+.retail-empty-message {
+    -fx-font-size: 14px;
+    -fx-text-fill: #777;
+    -fx-padding: 48 0 24 0;
+}
+
+.retail-divider {
+    -fx-padding: 28 0 20 0;
+}
+
+.cart-line-retail {
+    -fx-border-color: rgba(0, 0, 0, 0.06);
+    -fx-border-width: 0 0 1 0;
+}
+
+.cart-thumb-retail {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.06), 8, 0, 0, 2);
+}
+
+.cart-line-name {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0e3960;
+}
+
+.cart-line-amount {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 0.02em;
+    -fx-text-fill: #0e3960;
+}
+
+.btn-retail-link {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+    -fx-font-size: 11px;
+    -fx-letter-spacing: 0.08em;
+    -fx-text-fill: #888;
+    -fx-underline: true;
+    -fx-cursor: hand;
+}
+
+.btn-retail-link:hover {
+    -fx-text-fill: #bd936b;
+}
+
+.cart-qty-retail {
+    -fx-spacing: 2;
+    -fx-background-color: white;
+    -fx-border-color: rgba(14, 57, 96, 0.14);
+    -fx-border-radius: 10;
+    -fx-padding: 2;
+}
+
+.btn-qty-retail {
+    -fx-background-color: transparent;
+    -fx-text-fill: #0e3960;
+    -fx-font-size: 16px;
+    -fx-font-weight: 20px;
+    -fx-min-width: 20px;
+    -fx-min-height: 20px;
+    -fx-max-height: 20px;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+    -fx-background-radius: 8;
+}
+
+.btn-qty-retail:hover {
+    -fx-background-color: rgba(14, 57, 96, 0.06);
+}
+
+.cart-qty-num {
+    -fx-font-size: 10px;
+    -fx-min-width: 10px;
+    -fx-alignment: center;
+    -fx-text-fill: #0e3960;
+}
+
+.retail-total-row {
+    -fx-padding: 28 4 14 4;
+}
+
+.retail-total-label {
+    -fx-font-size: 12px;
+    -fx-letter-spacing: 0.18em;
+    -fx-text-fill: #777;
+}
+
+.retail-total-value {
+    -fx-font-size: 22px;
+    -fx-font-family: "Segoe UI Light", "Segoe UI", sans-serif;
+    -fx-text-fill: #0e3960;
+}
+
+.retail-checkout-card {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-effect: dropshadow(gaussian, rgba(14, 57, 96, 0.07), 16, 0, 0, 5);
+}
+
+.retail-panel-head {
+    -fx-font-size: 13px;
+    -fx-letter-spacing: 0.16em;
+    -fx-text-fill: #444;
+}
+
+.retail-field-label {
+    -fx-font-size: 11px;
+    -fx-letter-spacing: 0.1em;
+    -fx-text-fill: #888;
+}
+
+.combo-retail {
+    -fx-background-color: white;
+    -fx-background-radius: 0;
+    -fx-border-color: transparent transparent rgba(14, 57, 96, 0.35) transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-font-size: 13px;
+    -fx-padding: 8 4 10 4;
+}
+
+.btn-retail-cta {
+    -fx-background-color: #0e3960;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-letter-spacing: 0.18em;
+    -fx-padding: 14 18 14 18;
+    -fx-cursor: hand;
+    -fx-background-radius: 2;
+}
+
+.btn-retail-cta:hover {
+    -fx-background-color: #bd936b;
+}
+
+.fashion-wish-card {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.fashion-wish-image-shell {
+    -fx-background-color: #eae9e4;
+}
+
+.fashion-wish-placeholder {
+    -fx-background-color: #eae9e4;
+    -fx-min-width: 236px;
+    -fx-min-height: 292px;
+}
+
+.fashion-wish-remove {
+    -fx-background-color: rgba(255, 255, 255, 0.92);
+    -fx-background-radius: 999;
+    -fx-min-width: 38px;
+    -fx-min-height: 38px;
+    -fx-max-width: 38px;
+    -fx-max-height: 38px;
+    -fx-padding: 0;
+    -fx-border-color: rgba(14, 57, 96, 0.08);
+    -fx-border-radius: 999;
+    -fx-cursor: hand;
+}
+
+.fashion-wish-remove:hover {
+    -fx-background-color: white;
+    -fx-border-color: rgba(189, 147, 107, 0.55);
+}
+
+.fashion-wish-name {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0e3960;
+}
+
+.fashion-wish-price {
+    -fx-font-size: 14px;
+    -fx-letter-spacing: 0.04em;
+    -fx-text-fill: #444;
+}
+
+.btn-fashion-outline {
+    -fx-background-color: transparent;
+    -fx-text-fill: #0e3960;
+    -fx-border-color: #0e3960;
+    -fx-border-width: 1;
+    -fx-border-radius: 2;
+    -fx-padding: 12 18 12 18;
+    -fx-font-size: 11px;
+    -fx-letter-spacing: 0.14em;
+    -fx-cursor: hand;
+}
+
+.btn-fashion-outline:hover {
+    -fx-background-color: #0e3960;
+    -fx-text-fill: white;
+}
+
+.retail-facture-card {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-effect: dropshadow(gaussian, rgba(14, 57, 96, 0.08), 18, 0, 0, 6);
+    -fx-border-color: rgba(189, 147, 107, 0.35);
+    -fx-border-width: 0 0 0 3;
+}
+
+.retail-facture-fields {
+    -fx-padding: 4 0 0 0;
+}
+
+.retail-facture-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #888;
+    -fx-letter-spacing: 0.06em;
+}
+
+.retail-facture-value {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0e3960;
+}
+
+.retail-facture-sep {
+    -fx-padding: 8 0 4 0;
+}
+
+.retail-facture-line {
+    -fx-padding: 6 0 6 0;
+    -fx-border-color: rgba(0, 0, 0, 0.05);
+    -fx-border-width: 0 0 1 0;
+}
+
+.retail-facture-line-product {
+    -fx-font-size: 12px;
+    -fx-text-fill: #444;
+    -fx-max-width: 420;
+}
+
+.retail-facture-line-price {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0e3960;
+}
+
+/* ========== Mes produits (grille + fiche moderne) ========== */
+
+.mes-produits-page {
+    -fx-spacing: 0;
+}
+
+.mes-produits-toolbar {
+    -fx-background-color: rgba(255, 255, 255, 0.96);
+    -fx-padding: 18 36 20 36;
+    -fx-effect: dropshadow(gaussian, rgba(14, 57, 96, 0.06), 14, 0, 0, 3);
+}
+
+.mes-produits-split {
+    -fx-spacing: 0;
+}
+
+.mes-produits-scroll {
+    -fx-background-color: transparent;
+}
+
+.mes-produits-search {
+    -fx-background-color: white;
+    -fx-background-radius: 22;
+    -fx-border-color: rgba(14, 57, 96, 0.12);
+    -fx-border-radius: 22;
+    -fx-padding: 10 18 10 18;
+    -fx-font-size: 13px;
+    -fx-pref-width: 240;
+}
+
+.mes-produits-search:focused {
+    -fx-border-color: rgba(189, 147, 107, 0.65);
+}
+
+.btn-mes-outline {
+    -fx-background-color: transparent;
+    -fx-text-fill: #0e3960;
+    -fx-border-color: rgba(14, 57, 96, 0.28);
+    -fx-border-width: 1.2;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 11 16 11 16;
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+}
+
+.btn-mes-outline:hover {
+    -fx-background-color: rgba(14, 57, 96, 0.08);
+    -fx-border-color: rgba(14, 57, 96, 0.45);
+}
+
+.btn-mes-danger-outline {
+    -fx-background-color: transparent;
+    -fx-text-fill: #c0392b;
+    -fx-border-color: rgba(192, 57, 43, 0.55);
+    -fx-border-width: 1.2;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 11 16 11 16;
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+}
+
+.btn-mes-danger-outline:hover {
+    -fx-background-color: rgba(231, 76, 60, 0.10);
+    -fx-border-color: rgba(192, 57, 43, 0.70);
+}
+
+.btn-mes-primary {
+    -fx-background-color: #0e3960;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-padding: 14 18 14 18;
+    -fx-cursor: hand;
+    -fx-background-radius: 14;
+}
+
+.btn-mes-primary:hover {
+    -fx-background-color: #bd936b;
+}
+
+.btn-mes-ghost {
+    -fx-background-color: rgba(14, 57, 96, 0.06);
+    -fx-text-fill: #0e3960;
+    -fx-border-color: transparent;
+    -fx-background-radius: 2;
+    -fx-padding: 10 14 10 14;
+    -fx-font-size: 11px;
+    -fx-letter-spacing: 0.06em;
+    -fx-cursor: hand;
+}
+
+.btn-mes-ghost:hover {
+    -fx-background-color: rgba(189, 147, 107, 0.22);
+}
+
+.btn-mes-text {
+    -fx-background-color: transparent;
+    -fx-text-fill: #777;
+    -fx-font-size: 11px;
+    -fx-underline: true;
+    -fx-padding: 8;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+}
+
+.btn-mes-text:hover {
+    -fx-text-fill: #0e3960;
+}
+
+.mes-produits-form-shell {
+    -fx-background-color: rgba(250, 249, 246, 0.96);
+    -fx-border-color: rgba(14, 57, 96, 0.07);
+    -fx-border-width: 0 0 0 1;
+}
+
+.mes-produits-form-card {
+    -fx-background-color: transparent;
+}
+
+.mes-form-title {
+    -fx-font-size: 13px;
+    -fx-letter-spacing: 0.2em;
+    -fx-text-fill: #444;
+}
+
+.mes-form-hint {
+    -fx-font-size: 12px;
+    -fx-text-fill: #888;
+    -fx-wrap-text: true;
+}
+
+.mes-form-sep {
+    -fx-padding: 4 0 8 0;
+}
+
+.mes-field-label {
+    -fx-font-size: 11px;
+    -fx-letter-spacing: 0.08em;
+    -fx-text-fill: #777;
+}
+
+.mes-field-value {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0e3960;
+}
+
+.mes-field-input {
+    -fx-background-color: white;
+    -fx-background-radius: 0;
+    -fx-border-color: transparent transparent rgba(14, 57, 96, 0.25) transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 8 4 10 4;
+    -fx-font-size: 13px;
+}
+
+.mes-field-input:focused {
+    -fx-border-color: transparent transparent #bd936b transparent;
+}
+
+.mes-field-textarea {
+    -fx-background-color: white;
+    -fx-background-radius: 4;
+    -fx-border-color: rgba(14, 57, 96, 0.14);
+    -fx-border-radius: 4;
+    -fx-padding: 10;
+    -fx-font-size: 13px;
+}
+
+.mes-field-textarea:focused {
+    -fx-border-color: rgba(189, 147, 107, 0.65);
+}
+
+.mes-field-spinner {
+    -fx-background-radius: 4;
+    -fx-border-color: rgba(14, 57, 96, 0.14);
+    -fx-border-radius: 4;
+}
+
+.mes-field-datepicker {
+    -fx-background-color: transparent;
+}
+
+.mes-field-datepicker .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.mes-field-combo {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent rgba(14, 57, 96, 0.28) transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-font-size: 13px;
+}
+
+.mes-produit-card {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #ffffff 0%, #fafaf8 100%);
+    -fx-padding: 14 16 18 16;
+    -fx-spacing: 8;
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: rgba(14, 57, 96, 0.08);
+    -fx-border-width: 1;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.06), 18, 0, 0, 5);
+}
+
+.mes-produit-card:hover {
+    -fx-border-color: rgba(189, 147, 107, 0.42);
+    -fx-effect: dropshadow(gaussian, rgba(14, 57, 96, 0.12), 22, 0, 0, 8);
+}
+
+.mes-produit-card-selected {
+    -fx-border-color: #0e3960;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(14, 57, 96, 0.18), 20, 0, 0, 6);
+}
+
+.mes-produit-thumb-shell {
+    -fx-background-color: #eae9e4;
+    -fx-background-radius: 12;
+}
+
+.mes-produit-thumb-ph {
+    -fx-font-size: 11px;
+    -fx-letter-spacing: 0.06em;
+    -fx-text-fill: rgba(14, 57, 96, 0.35);
+}
+
+.mes-produit-badge {
+    -fx-font-size: 10px;
+    -fx-letter-spacing: 0.06em;
+    -fx-padding: 5 10 5 10;
+    -fx-background-radius: 3;
+    -fx-text-fill: white;
+}
+
+.mes-badge-attente {
+    -fx-background-color: rgba(14, 57, 96, 0.85);
+}
+
+.mes-badge-approuve {
+    -fx-background-color: rgba(76, 175, 80, 0.92);
+}
+
+.mes-badge-refuse {
+    -fx-background-color: rgba(231, 76, 60, 0.9);
+}
+
+.mes-badge-default {
+    -fx-background-color: rgba(120, 120, 120, 0.85);
+}
+
+.mes-produit-nom {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0e3960;
+}
+
+.mes-produit-prix {
+    -fx-font-size: 14px;
+    -fx-letter-spacing: 0.04em;
+    -fx-text-fill: #333;
+}
+
+.mes-produit-meta {
+    -fx-font-size: 11px;
+    -fx-text-fill: #999;
+}
+
+/* ========== Mes commandes (suivi type boutique) ========== */
+
+.cmd-page {
+    -fx-spacing: 0;
+}
+
+.cmd-toolbar {
+    -fx-effect: dropshadow(gaussian, rgba(14, 57, 96, 0.06), 14, 0, 0, 3);
+}
+
+.cmd-scroll {
+    -fx-background-color: transparent;
+}
+
+.cmd-empty {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666;
+    -fx-padding: 32 0 48 0;
+}
+
+.cmd-order-card {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #ffffff 0%, #f9f8f5 55%, #ffffff 100%);
+    -fx-padding: 28 32 28 32;
+    -fx-spacing: 0;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(14, 57, 96, 0.09);
+    -fx-border-width: 1;
+    -fx-max-width: 720;
+    -fx-effect: dropshadow(three-pass-box, rgba(14, 57, 96, 0.09), 28, 0, 0, 10);
+}
+
+.cmd-order-card:hover {
+    -fx-border-color: rgba(189, 147, 107, 0.35);
+    -fx-effect: dropshadow(three-pass-box, rgba(14, 57, 96, 0.14), 34, 0, 0, 14);
+}
+
+.cmd-order-head {
+    -fx-alignment: top-left;
+}
+
+.cmd-order-ref {
+    -fx-font-size: 11px;
+    -fx-letter-spacing: 0.22em;
+    -fx-text-fill: #888;
+}
+
+.cmd-order-date {
+    -fx-font-size: 16px;
+    -fx-font-family: "Segoe UI Light", "Segoe UI", sans-serif;
+    -fx-text-fill: #0e3960;
+}
+
+.cmd-status-pill {
+    -fx-font-size: 10px;
+    -fx-letter-spacing: 0.12em;
+    -fx-padding: 8 14 8 14;
+    -fx-background-radius: 3;
+}
+
+.cmd-pill-wait {
+    -fx-background-color: rgba(14, 57, 96, 0.88);
+    -fx-text-fill: white;
+}
+
+.cmd-pill-info {
+    -fx-background-color: rgba(189, 147, 107, 0.92);
+    -fx-text-fill: white;
+}
+
+.cmd-pill-ok {
+    -fx-background-color: rgba(46, 125, 50, 0.9);
+    -fx-text-fill: white;
+}
+
+.cmd-pill-cancel {
+    -fx-background-color: rgba(211, 47, 47, 0.9);
+    -fx-text-fill: white;
+}
+
+.cmd-pill-default {
+    -fx-background-color: #777;
+    -fx-text-fill: white;
+}
+
+.cmd-cancel-banner {
+    -fx-font-size: 12px;
+    -fx-text-fill: #c0392b;
+    -fx-padding: 12 14 18 14;
+    -fx-background-color: rgba(231, 76, 60, 0.08);
+    -fx-background-radius: 4;
+}
+
+.cmd-timeline {
+    -fx-padding: 8 4 0 4;
+}
+
+.cmd-timeline-dot {
+    -fx-font-size: 14px;
+}
+
+.cmd-dot-on {
+    -fx-text-fill: #0e3960;
+}
+
+.cmd-dot-off {
+    -fx-text-fill: #ccc;
+}
+
+.cmd-timeline-title {
+    -fx-font-size: 9px;
+    -fx-letter-spacing: 0.08em;
+    -fx-text-fill: #888;
+}
+
+.cmd-timeline-sub {
+    -fx-font-size: 11px;
+    -fx-text-fill: #aaa;
+}
+
+.cmd-timeline-sub-on {
+    -fx-text-fill: #444;
+    -fx-font-weight: bold;
+}
+
+.cmd-timeline-line {
+    -fx-min-height: 2px;
+    -fx-max-height: 2px;
+}
+
+.cmd-line-on {
+    -fx-background-color: #0e3960;
+}
+
+.cmd-line-off {
+    -fx-background-color: #e0e0e0;
+}
+
+.cmd-sep {
+    -fx-padding: 6 0 0 0;
+}
+
+.cmd-sep-strong {
+    -fx-padding: 4 0 0 0;
+}
+
+.cmd-details-block {
+    -fx-spacing: 12;
+}
+
+.cmd-detail-row {
+    -fx-alignment: center-left;
+}
+
+.cmd-detail-key {
+    -fx-font-size: 11px;
+    -fx-letter-spacing: 0.1em;
+    -fx-text-fill: #888;
+}
+
+.cmd-detail-val {
+    -fx-font-size: 13px;
+    -fx-text-fill: #0e3960;
+    -fx-font-weight: normal;
+}
+
+.cmd-facture-block {
+    -fx-spacing: 10;
+}
+
+.cmd-facture-kicker {
+    -fx-font-size: 11px;
+    -fx-letter-spacing: 0.2em;
+    -fx-text-fill: #555;
+}
+
+.cmd-total-row {
+    -fx-alignment: center-left;
+}
+
+.cmd-total-label {
+    -fx-font-size: 12px;
+    -fx-letter-spacing: 0.2em;
+    -fx-text-fill: #777;
+}
+
+.cmd-total-value {
+    -fx-font-size: 22px;
+    -fx-font-family: "Segoe UI Light", "Segoe UI", sans-serif;
+    -fx-text-fill: #0e3960;
+}
+
+/* ========== Administration (fenêtre séparée, même charte que l’app utilisateur) ========== */
+
+.admin-root {
+    -fx-background-color: transparent;
+}
+
+.admin-sidebar {
+    -fx-background-color: #0e3960;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.18), 24, 0, 4, 0);
+}
+
+.admin-sidebar-brand .logo-title {
+    -fx-font-size: 26px;
+}
+
+.admin-sidebar-brand .logo-subtitle {
+    -fx-text-fill: rgba(189, 147, 107, 0.95);
+    -fx-font-size: 11px;
+    -fx-letter-spacing: 0.06em;
+}
+
+.admin-nav-heading {
+    -fx-font-size: 10px;
+    -fx-letter-spacing: 0.2em;
+    -fx-text-fill: rgba(255, 255, 255, 0.45);
+}
+
+.admin-nav-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: rgba(255, 255, 255, 0.78);
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 12 14 12 14;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+    -fx-border-width: 0 0 0 3;
+    -fx-border-radius: 10;
+}
+
+.admin-nav-btn:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-text-fill: white;
+}
+
+.admin-nav-active {
+    -fx-background-color: rgba(255, 255, 255, 0.12);
+    -fx-text-fill: white;
+    -fx-border-color: #bd936b;
+}
+
+.admin-sidebar-foot {
+    -fx-font-size: 11px;
+    -fx-text-fill: rgba(255, 255, 255, 0.5);
+    -fx-wrap-text: true;
+}
+
+.admin-sidebar .separator .line {
+    -fx-border-color: rgba(255, 255, 255, 0.14);
+    -fx-padding: 8 0 8 0;
+}
+
+.admin-main {
+    -fx-background-color: transparent;
+}
+
+.admin-stack-wrap {
+    -fx-background-color: transparent;
+}
+
+.admin-watermark {
+    -fx-font-size: 28px;
+    -fx-opacity: 0.35;
+}
+
+.admin-toolbar-card {
+    -fx-background-color: rgba(255, 255, 255, 0.92);
+    -fx-background-radius: 14;
+    -fx-padding: 14 18 14 18;
+    -fx-effect: dropshadow(gaussian, rgba(14, 57, 96, 0.06), 12, 0, 0, 3);
+    -fx-border-color: rgba(14, 57, 96, 0.06);
+    -fx-border-radius: 14;
+    -fx-border-width: 1;
+}
+
+.admin-actions-card {
+    -fx-background-color: rgba(255, 255, 255, 0.92);
+    -fx-background-radius: 14;
+    -fx-padding: 14 18 14 18;
+    -fx-effect: dropshadow(gaussian, rgba(14, 57, 96, 0.06), 12, 0, 0, 3);
+    -fx-border-color: rgba(14, 57, 96, 0.06);
+    -fx-border-radius: 14;
+    -fx-border-width: 1;
+}
+
+.admin-toolbar-label {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0e3960;
+}
+
+.admin-table-shell {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-padding: 8;
+    -fx-effect: dropshadow(three-pass-box, rgba(14, 57, 96, 0.08), 22, 0, 0, 6);
+    -fx-border-color: rgba(14, 57, 96, 0.07);
+    -fx-border-radius: 16;
+    -fx-border-width: 1;
+}
+
+.admin-scroll {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.admin-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.admin-scroll .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 10;
+}
+
+.admin-scroll .scroll-bar .thumb {
+    -fx-background-color: rgba(14, 57, 96, 0.22);
+    -fx-background-radius: 5;
+}
+
+.admin-cards-stack {
+    -fx-background-color: transparent;
+}
+
+.admin-card {
+    -fx-background-color: linear-gradient(from 0% 0% to 102% 100%, #ffffff 0%, #fafaf8 100%);
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(14, 57, 96, 0.09);
+    -fx-border-width: 1;
+    -fx-padding: 14 18 14 18;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 14, 0, 0, 3);
+    -fx-cursor: hand;
+}
+
+.admin-card:hover {
+    -fx-border-color: rgba(189, 147, 107, 0.35);
+}
+
+.admin-card-selected {
+    -fx-border-color: #bd936b;
+    -fx-border-width: 2;
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #fffefb 0%, #f7f4ee 100%);
+    -fx-effect: dropshadow(gaussian, rgba(14, 57, 96, 0.12), 18, 0, 0, 5);
+}
+
+.admin-card-id {
+    -fx-font-size: 11px;
+    -fx-letter-spacing: 0.12em;
+    -fx-text-fill: rgba(14, 57, 96, 0.45);
+}
+
+.admin-card-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0e3960;
+}
+
+.admin-produit-thumb {
+    -fx-opacity: 0.98;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.10), 10, 0.12, 0, 3);
+}
+
+.admin-card-montant {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0e3960;
+}
+
+.admin-card-meta {
+    -fx-font-size: 12px;
+    -fx-text-fill: #666;
+}
+
+.admin-card-desc {
+    -fx-font-size: 12px;
+    -fx-text-fill: #888;
+    -fx-font-style: italic;
+}
+
+.admin-badge {
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 0.06em;
+    -fx-padding: 6 12 6 12;
+    -fx-background-radius: 10;
+    -fx-text-fill: white;
+}
+
+.admin-badge-attente {
+    -fx-background-color: rgba(14, 57, 96, 0.88);
+}
+
+.admin-badge-ok {
+    -fx-background-color: rgba(76, 175, 80, 0.92);
+}
+
+.admin-badge-livree {
+    -fx-background-color: rgba(33, 150, 243, 0.9);
+}
+
+.admin-badge-refus {
+    -fx-background-color: rgba(231, 76, 60, 0.92);
+}
+
+.admin-badge-muted {
+    -fx-background-color: rgba(120, 120, 120, 0.75);
+}
+
+.admin-empty {
+    -fx-font-size: 14px;
+    -fx-text-fill: #777;
+    -fx-padding: 28 16 40 16;
+}
+
+.admin-hint {
+    -fx-font-size: 12px;
+    -fx-text-fill: #777;
+}
+
+.admin-commande-editor {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #ffffff 0%, #faf9f6 100%);
+    -fx-background-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(14, 57, 96, 0.07), 16, 0, 0, 4);
+    -fx-border-color: rgba(189, 147, 107, 0.25);
+    -fx-border-radius: 16;
+    -fx-border-width: 1;
+}
+
+.admin-detail-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #0e3960;
+}
+
+.combo-box-base.admin-combo {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: rgba(14, 57, 96, 0.18);
+    -fx-border-width: 1.5;
+    -fx-background-color: white;
+    -fx-padding: 4 10 4 10;
+}
+
+.combo-box-base.admin-combo:hover {
+    -fx-border-color: rgba(189, 147, 107, 0.65);
+}
+
+.combo-box-base.admin-combo:focused {
+    -fx-border-color: #bd936b;
+}
+.shop-top-bar {
+    -fx-padding: 10 18 10 18;
+}
+
+/* catégories */
+.shop-category-bar {
+    -fx-background-color: transparent;
+}
+
+/* checkbox moderne */
+.shop-alerte-checkbox {
+    -fx-text-fill: rgba(189, 147, 107, 0.65);
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-padding: 6 12 6 12;
+
+    -fx-background-color: #f3f6fb;
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+
+    -fx-border-color: #cfd9e6;
+    -fx-border-width: 1;
+
+    -fx-cursor: hand;
+}
+
+/* hover */
+.shop-alerte-checkbox:hover {
+    -fx-background-color: #eaf1fb;
+    -fx-border-color: #0e3960;
+}
+
+/* selected state */
+.shop-alerte-checkbox:selected {
+    -fx-background-color: rgba(189, 147, 107, 0.65);
+    -fx-text-fill: white;
+    -fx-border-color: rgba(189, 147, 107, 0.65);
+}

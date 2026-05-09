@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<!-- Root is now a StackPane so the cat can overlay everything -->
+<StackPane xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="Controllers.GestionProduitController">
+
+    <BorderPane prefHeight="750.0" prefWidth="1100.0">
+
+        <left>
+            <VBox maxWidth="220.0" minWidth="220.0" prefWidth="220.0" styleClass="sidebar">
+
+                <VBox styleClass="sidebar-header">
+                    <Label styleClass="logo-title" text="Purrly" />
+                </VBox>
+
+                <VBox styleClass="menu-container" VBox.vgrow="ALWAYS">
+                    <Button maxWidth="Infinity" onAction="#toggleBoutique" styleClass="menu-item-parent" text="  Boutique">
+                        <font>
+                            <Font name="System Bold" size="14.0" />
+                        </font>
+                    </Button>
+                    <VBox fx:id="boutiqueSubMenu" managed="false" visible="false">
+                        <Button maxWidth="Infinity" onAction="#handleShop" styleClass="submenu-item" text="      Boutique" />
+                        <Button maxWidth="Infinity" onAction="#handleMesProduits" styleClass="submenu-item" text="      Mes Produits" />
+                        <Button maxWidth="Infinity" onAction="#handleCommandes" styleClass="submenu-item" text="      Mes Commandes" />
+                    </VBox>
+                </VBox>
+
+                <VBox styleClass="sidebar-footer">
+                    <Separator />
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Label styleClass="user-avatar" text="👤" />
+                        <VBox>
+                            <Label fx:id="userNameLabel" styleClass="user-name" text="Nom d'utilisateur" />
+                            <Label fx:id="userRoleLabel" styleClass="user-role" text="Pet Owner" />
+                        </VBox>
+                    </HBox>
+                </VBox>
+
+            </VBox>
+        </left>
+
+        <center>
+            <StackPane fx:id="mainContent" styleClass="main-content">
+                <VBox alignment="CENTER" spacing="20">
+                    <Label prefHeight="35.0" prefWidth="132.0" styleClass="welcome-title" text="Bienvenue sur Purrly 🐾" />
+                    <Label styleClass="welcome-subtitle" text="Sélectionnez une option dans le menu" />
+                </VBox>
+            </StackPane>
+        </center>
+
+    </BorderPane>
+
+    <!-- 🐱 Cat peek overlay — bottom-right corner -->
+    <ImageView fx:id="catPeek"
+               fitWidth="150"
+               preserveRatio="true"
+               mouseTransparent="true"
+               translateY="160"
+               StackPane.alignment="BOTTOM_RIGHT">
+        <image>
+            <Image url="@../images/cat-movement.gif" />
+        </image>
+    </ImageView>
+
+</StackPane>

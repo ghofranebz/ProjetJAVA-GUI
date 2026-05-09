@@ -5,46 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="986cfb1b-24c2-4c45-90bb-50e8689fc35b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Categorie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Commande.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Favoris.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/PanierItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Produit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/TestAdmin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/TestCommandeCRUD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/TestFavorisCRUD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/TestPanierCRUD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/TestProduitCRUD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/TestUserCRUD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/tools/Mydb.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/AdminCategorieService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/AdminCommandeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/AdminProduitService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/CommandeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/FavorisService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/ICrud.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/PanierService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/ProduitService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/CommandesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/FavorisController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/GestionProduitController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/MesProduitsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/PanierController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/ShopController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/ProduitMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/EmailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/FacturePdfService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/cat-movement.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/long-dog.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/love.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sounds/meow.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/Commandes.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/Favoris.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/GestionProduit.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/MesProduits.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/Panier.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/Shop.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Categorie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Categorie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Produit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Produit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/TestAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/TestAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/TestCommandeCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/TestCommandeCRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/AdminCategorieService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/AdminProduitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/AdminProduitService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/CommandeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/CommandeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/PanierService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/PanierService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/ProduitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/ProduitService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/Categorie.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/Categorie.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entities/Produit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/Produit.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/TestAdmin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/TestAdmin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/TestFavorisCRUD.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/TestFavorisCRUD.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/TestPanierCRUD.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/TestPanierCRUD.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/TestProduitCRUD.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/TestProduitCRUD.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/TestUserCRUD.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/TestUserCRUD.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/AdminCategorieService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/AdminCategorieService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/TestCommandeCRUD.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/AdminCategorieService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/AdminProduitService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/AdminProduitService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/services/CommandeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/CommandeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/FavorisService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/FavorisService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/services/PanierService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/PanierService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/services/ProduitService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/ProduitService.class" afterDir="false" />
     </list>
@@ -59,6 +57,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -66,6 +65,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Lina-Helali"
+  }
+}]]></component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/ghofranebz/ProjetGUI.git",
@@ -80,18 +85,25 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="3DAq22eJawAJ76vVQMvGi5DvDvr" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.AdminMain (JavaFX).executor": "Run",
+    "Application.AdminMain.executor": "Run",
+    "Application.ProduitMain.executor": "Run",
     "Application.TestAdmin.executor": "Run",
     "Application.TestCommandeCRUD.executor": "Run",
     "Application.TestFavorisCRUD.executor": "Run",
     "Application.TestPanierCRUD.executor": "Run",
     "Application.TestProduitCRUD.executor": "Run",
     "Application.TestUserCRUD.executor": "Run",
+    "Maven.ProjetGUI [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -101,7 +113,7 @@
     "git-widget-placeholder": "#1 on Shop-lina",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/linah/IdeaProjects/ProjetGuI/src/main",
+    "last_opened_file_path": "C:/Users/linah/IdeaProjects/ProjetGuI/src/main/resources/images",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -116,11 +128,48 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\linah\IdeaProjects\ProjetGuI\src\main\resources\images" />
+      <recent name="C:\Users\linah\IdeaProjects\ProjetGuI\src\main\resources\sounds" />
       <recent name="C:\Users\linah\IdeaProjects\ProjetGuI\src\main" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\linah\IdeaProjects\ProjetGuI\src\main\resources\View" />
       <recent name="C:\Users\linah\IdeaProjects\ProjetGuI\src\main" />
     </key>
+  </component>
+  <component name="RunManager" selected="Application.AdminMain (JavaFX)">
+    <configuration name="AdminMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.AdminMain" />
+      <module name="ProjetGUI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProduitMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.ProduitMain" />
+      <module name="ProjetGUI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AdminMain" />
+        <item itemvalue="Application.ProduitMain" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>

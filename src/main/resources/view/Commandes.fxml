@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="Controllers.CommandesController"
+      spacing="0"
+      styleClass="cmd-page">
+
+    <VBox styleClass="retail-toolbar cmd-toolbar" spacing="6">
+        <padding>
+            <Insets bottom="18" left="36" right="36" top="22"/>
+        </padding>
+        <Label text="MES COMMANDES" styleClass="retail-hero-kicker"/>
+        <Label text="Suivi des achats" styleClass="retail-hero-title"/>
+        <Label text="Historique détaillé, paiement et facture associée."
+               styleClass="retail-hero-sub"/>
+
+        <!-- ══════════════════════════════════════════════ -->
+        <!--  🔍  BARRE DE RECHERCHE PAR ID  (NOUVEAU)     -->
+        <!-- ══════════════════════════════════════════════ -->
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <padding><Insets top="10"/></padding>
+
+
+        <HBox styleClass="search-wrap" alignment="CENTER_LEFT" spacing="8">
+            <TextField fx:id="searchCommandeField"
+                       promptText="Rechercher une commande par ID..."
+                       styleClass="search-field-shop"/>
+            <Button fx:id="searchButton"
+                    onAction="#handleSearchCommande"
+                    styleClass="btn-search-retail">
+
+            <graphic>
+                <SVGPath styleClass="icon-fill-navy"
+                         scaleX="0.50" scaleY="0.50"
+                         content="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79L20 21.49 21.49 20 15.5 14zM9.5 14C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </graphic>
+            </Button>
+            </HBox>
+
+
+
+        </HBox>
+        <!-- ══════════════════════════════════════════════ -->
+
+    </VBox>
+
+    <ScrollPane fitToWidth="true"
+                VBox.vgrow="ALWAYS"
+                styleClass="main-content cmd-scroll"
+                hbarPolicy="NEVER">
+
+        <VBox spacing="0">
+            <padding>
+                <Insets bottom="48" left="36" right="36" top="24"/>
+            </padding>
+
+            <Label fx:id="emptyCommandesLabel"
+                   managed="false"
+                   visible="false"
+                   text="Aucune commande trouvée."
+                   styleClass="cmd-empty"/>
+
+            <VBox fx:id="commandesContainer" spacing="28"/>
+        </VBox>
+
+    </ScrollPane>
+
+</VBox>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="Controllers.MesProduitsController"
+      spacing="0"
+      styleClass="mes-produits-page">
+
+    <HBox styleClass="retail-toolbar mes-produits-toolbar" alignment="CENTER_LEFT" spacing="18">
+        <VBox spacing="4" HBox.hgrow="ALWAYS">
+            <Label text="MES ARTICLES" styleClass="retail-hero-kicker"/>
+            <Label text="Mes produits" styleClass="retail-hero-title"/>
+            <Label text="Créez, mettez à jour ou retirez vos fiches."
+                   styleClass="retail-hero-sub"/>
+        </VBox>
+
+        <TextField fx:id="searchField"
+                   promptText="Filtrer par nom ou description…"
+                   styleClass="mes-produits-search"/>
+
+        <Button text="NOUVEAU"
+                onAction="#handleNouveau"
+                styleClass="btn-mes-outline"/>
+
+        <Button text="SUPPRIMER"
+                onAction="#handleSupprimer"
+                styleClass="btn-mes-danger-outline"/>
+    </HBox>
+
+    <HBox VBox.vgrow="ALWAYS" styleClass="mes-produits-split">
+
+        <ScrollPane fitToWidth="true"
+                    HBox.hgrow="ALWAYS"
+                    styleClass="main-content mes-produits-scroll"
+                    hbarPolicy="NEVER">
+            <VBox spacing="0">
+                <padding>
+                    <Insets bottom="32" left="36" right="24" top="20"/>
+                </padding>
+                <FlowPane fx:id="productsPane"
+                          hgap="22"
+                          vgap="22"/>
+            </VBox>
+        </ScrollPane>
+
+        <VBox prefWidth="430" minWidth="360" maxWidth="480" styleClass="mes-produits-form-shell">
+            <VBox styleClass="mes-produits-form-card" spacing="18" VBox.vgrow="ALWAYS">
+                <padding>
+                    <Insets bottom="28" left="28" right="28" top="28"/>
+                </padding>
+
+                <Label text="Fiche produit" styleClass="mes-form-title"/>
+
+                <Label fx:id="formHintLabel"
+                       text="Sélectionnez une carte ou cliquez sur NOUVEAU."
+                       styleClass="mes-form-hint"/>
+
+                <Separator styleClass="mes-form-sep"/>
+
+                <GridPane hgap="12" vgap="12">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="118" prefWidth="124"/>
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="160"/>
+                    </columnConstraints>
+
+                    <Label text="ID produit" styleClass="mes-field-label" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                    <Label fx:id="fieldIdDisplay" text="—" styleClass="mes-field-value" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                    <Label text="Nom" styleClass="mes-field-label" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                    <TextField fx:id="fieldNom" styleClass="mes-field-input" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                    <Label text="Description" styleClass="mes-field-label" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                    <TextArea fx:id="fieldDescription"
+                              wrapText="true"
+                              prefRowCount="4"
+                              styleClass="mes-field-textarea"
+                              GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                    <Label text="Prix (TND)" styleClass="mes-field-label" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                    <TextField fx:id="fieldPrix" promptText="0,00" styleClass="mes-field-input" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                    <Label text="Stock" styleClass="mes-field-label" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                    <Spinner fx:id="fieldStock" editable="true" styleClass="mes-field-spinner" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+                    <Label text="Date d'ajout" styleClass="mes-field-label" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+                    <DatePicker fx:id="fieldDateAjout" styleClass="mes-field-datepicker" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+                    <Label text="Image (chemin)" styleClass="mes-field-label" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+                    <HBox spacing="8" alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                        <TextField fx:id="fieldImagePath" styleClass="mes-field-input" HBox.hgrow="ALWAYS"/>
+                        <Button text="Parcourir…" onAction="#handleParcourirImage" styleClass="btn-mes-ghost"/>
+                    </HBox>
+
+                    <Label text="Catégorie" styleClass="mes-field-label" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+                    <ComboBox fx:id="fieldCategorie" styleClass="mes-field-combo" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+
+                    <Label text="Portefeuille Konnect (vendeur)" styleClass="mes-field-label" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+                    <TextField fx:id="fieldSellerWalletId"
+                               promptText="ID wallet vendeur (receiverWalletId)"
+                               styleClass="mes-field-input"
+                               GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+                </GridPane>
+
+                <Region VBox.vgrow="ALWAYS"/>
+
+                <VBox spacing="10">
+                    <Button fx:id="saveButton" text="ENREGISTRER"
+                            onAction="#handleEnregistrer"
+                            styleClass="btn-mes-primary"
+                            maxWidth="Infinity"/>
+
+                    <Button text="Réinitialiser le formulaire"
+                            onAction="#handleResetForm"
+                            styleClass="btn-mes-text"
+                            maxWidth="Infinity"/>
+                </VBox>
+            </VBox>
+        </VBox>
+    </HBox>
+
+</VBox>

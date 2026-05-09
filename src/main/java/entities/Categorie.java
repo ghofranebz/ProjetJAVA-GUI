@@ -17,4 +17,9 @@ public class Categorie {
     public void setId_categorie(int id) { this.id_categorie = id; }
     public void setNom(String nom) { this.nom = nom; }
     public void setDescription(String description) { this.description = description; }
+
+    @Override
+    public String toString() {
+        return nom != null ? nom : "";
+    }
 }
