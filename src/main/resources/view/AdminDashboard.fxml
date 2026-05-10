@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -20,27 +21,44 @@
     <BorderPane prefHeight="760.0" prefWidth="1180.0" styleClass="admin-root">
 
         <left>
-            <VBox alignment="TOP_CENTER" maxWidth="230.0" minWidth="230.0" prefWidth="230.0" spacing="0.0" styleClass="admin-sidebar">
+            <VBox alignment="TOP_CENTER" maxWidth="230.0" minWidth="230.0" prefWidth="230.0"
+                  spacing="0.0" styleClass="admin-sidebar">
                 <padding>
-                    <Insets bottom="22.0" left="18.0" right="18.0" top="28.0" />
+                    <Insets bottom="22.0" left="18.0" right="18.0" top="28.0"/>
                 </padding>
 
-                <!-- 🐾 Logo Purrly style -->
                 <VBox spacing="4.0" styleClass="admin-sidebar-brand" alignment="CENTER">
-                    <Label text="🐾" style="-fx-font-size: 40px; -fx-text-fill: white;" />
-                    <Label styleClass="logo-title" text="Purrly." />
-                    <Label styleClass="logo-subtitle" text="Console administration" wrapText="true" />
+                    <Label text="🐾" style="-fx-font-size: 40px; -fx-text-fill: white;"/>
+                    <Label styleClass="logo-title" text="Purrly."/>
+                    <Label styleClass="logo-subtitle" text="Console administration" wrapText="true"/>
                 </VBox>
 
-                <Region prefHeight="28.0" />
+                <Region prefHeight="28.0"/>
                 <VBox spacing="8.0" styleClass="admin-nav-block">
-                    <Label styleClass="admin-nav-heading" text="MENU" />
-                    <Button fx:id="navProduits" alignment="CENTER_LEFT" maxWidth="Infinity" mnemonicParsing="false" styleClass="admin-nav-btn,admin-nav-active" text="  Produits vendeurs" />
-                    <Button fx:id="navCommandes" alignment="CENTER_LEFT" maxWidth="Infinity" mnemonicParsing="false" styleClass="admin-nav-btn" text="  Commandes clients" />
+                    <Label styleClass="admin-nav-heading" text="MENU"/>
+                    <Button fx:id="navProduits"
+                            alignment="CENTER_LEFT" maxWidth="Infinity"
+                            mnemonicParsing="false"
+                            styleClass="admin-nav-btn,admin-nav-active"
+                            text="  Produits vendeurs"/>
+                    <Button fx:id="navCommandes"
+                            alignment="CENTER_LEFT" maxWidth="Infinity"
+                            mnemonicParsing="false"
+                            styleClass="admin-nav-btn"
+                            text="  Commandes clients"/>
+                    <!-- ══ NOUVEAU BOUTON ══ -->
+                    <Button fx:id="navFactures"
+                            alignment="CENTER_LEFT" maxWidth="Infinity"
+                            mnemonicParsing="false"
+                            styleClass="admin-nav-btn"
+                            text="  Factures clients"/>
                 </VBox>
-                <Region VBox.vgrow="ALWAYS" />
-                <Separator />
-                <Label styleClass="admin-sidebar-foot" text="Charte identique à l'espace utilisateur — navy #0e3960 &amp; accent bronze." wrapText="true" />
+
+                <Region VBox.vgrow="ALWAYS"/>
+                <Separator/>
+                <Label styleClass="admin-sidebar-foot"
+                       text="Charte identique à l'espace utilisateur — navy #0e3960 &amp; accent bronze."
+                       wrapText="true"/>
             </VBox>
         </left>
 
@@ -48,77 +66,116 @@
             <BorderPane styleClass="admin-main">
                 <top>
                     <VBox styleClass="page-header">
-                        <padding>
-                            <Insets bottom="4.0" />
-                        </padding>
+                        <padding><Insets bottom="4.0"/></padding>
                         <HBox alignment="CENTER_LEFT" spacing="16.0">
-                            <padding>
-                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
-                            </padding>
+                            <padding><Insets bottom="4.0" left="4.0" right="4.0" top="4.0"/></padding>
                             <VBox spacing="6.0">
-                                <Label fx:id="adminSectionTitle" styleClass="page-title" text="Validation des produits" />
-                                <Label fx:id="adminSectionSubtitle" styleClass="page-subtitle" text="Approuvez ou refusez les annonces avant publication en boutique." wrapText="true" />
+                                <Label fx:id="adminSectionTitle"  styleClass="page-title"    text="Validation des produits"/>
+                                <Label fx:id="adminSectionSubtitle" styleClass="page-subtitle"
+                                       text="Approuvez ou refusez les annonces avant publication en boutique."
+                                       wrapText="true"/>
                             </VBox>
-                            <Region HBox.hgrow="ALWAYS" />
-                            <Label styleClass="admin-watermark" text="" />
+                            <Region HBox.hgrow="ALWAYS"/>
+                            <Label styleClass="admin-watermark" text=""/>
                         </HBox>
                     </VBox>
                 </top>
+
                 <center>
                     <VBox styleClass="admin-stack-wrap" BorderPane.alignment="CENTER">
-                        <padding>
-                            <Insets bottom="24.0" left="24.0" right="28.0" top="18.0" />
-                        </padding>
+                        <padding><Insets bottom="24.0" left="24.0" right="28.0" top="18.0"/></padding>
+
                         <StackPane VBox.vgrow="ALWAYS">
+
+                            <!-- ══════════════ PANEL COMMANDES (inchangé) ══════════════ -->
                             <VBox fx:id="panelCommandes" spacing="14.0">
                                 <HBox alignment="CENTER_LEFT" spacing="14.0" styleClass="admin-toolbar-card">
-                                    <Label styleClass="section-title" text="Suivi des commandes" />
-                                    <Region HBox.hgrow="ALWAYS" />
-                                    <Button fx:id="btnRefreshCommandes" mnemonicParsing="false" styleClass="btn-secondary" text="Actualiser" />
+                                    <Label styleClass="section-title" text="Suivi des commandes"/>
+                                    <Region HBox.hgrow="ALWAYS"/>
+                                    <Button fx:id="btnRefreshCommandes" mnemonicParsing="false"
+                                            styleClass="btn-secondary" text="Actualiser"/>
                                 </HBox>
                                 <VBox styleClass="admin-table-shell" VBox.vgrow="ALWAYS">
-                                    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="admin-scroll" VBox.vgrow="ALWAYS">
+                                    <ScrollPane fitToWidth="true" hbarPolicy="NEVER"
+                                                styleClass="admin-scroll" VBox.vgrow="ALWAYS">
                                         <VBox fx:id="commandesCardsBox" spacing="12.0" styleClass="admin-cards-stack">
-                                            <padding>
-                                                <Insets bottom="12.0" left="10.0" right="14.0" top="10.0" />
-                                            </padding>
+                                            <padding><Insets bottom="12.0" left="10.0" right="14.0" top="10.0"/></padding>
                                         </VBox>
                                     </ScrollPane>
                                 </VBox>
                                 <VBox spacing="12.0" styleClass="admin-commande-editor">
-                                    <padding>
-                                        <Insets bottom="16.0" left="18.0" right="18.0" top="16.0" />
-                                    </padding>
-                                    <Label fx:id="commandeDetailLabel" styleClass="admin-detail-label" wrapText="true" />
+                                    <padding><Insets bottom="16.0" left="18.0" right="18.0" top="16.0"/></padding>
+                                    <Label fx:id="commandeDetailLabel" styleClass="admin-detail-label" wrapText="true"/>
                                     <HBox alignment="CENTER_LEFT" spacing="12.0">
-                                        <Label styleClass="admin-toolbar-label" text="Nouveau statut" />
-                                        <ComboBox fx:id="commandeStatutCombo" prefWidth="176.0" styleClass="admin-combo" />
-                                        <Button fx:id="btnAppliquerStatut" mnemonicParsing="false" styleClass="btn-primary" text="Appliquer" />
+                                        <Label styleClass="admin-toolbar-label" text="Nouveau statut"/>
+                                        <ComboBox fx:id="commandeStatutCombo" prefWidth="176.0" styleClass="admin-combo"/>
+                                        <Button fx:id="btnAppliquerStatut" mnemonicParsing="false"
+                                                styleClass="btn-primary" text="Appliquer"/>
                                     </HBox>
                                 </VBox>
                             </VBox>
+
+                            <!-- ══════════════ PANEL PRODUITS (inchangé) ══════════════ -->
                             <VBox fx:id="panelProduits" spacing="14.0">
                                 <HBox alignment="CENTER_LEFT" spacing="14.0" styleClass="admin-toolbar-card">
-                                    <Label styleClass="section-title" text="Filtrer les annonces" />
-                                    <ComboBox fx:id="produitFiltreCombo" prefWidth="184.0" styleClass="admin-combo" />
-                                    <Region HBox.hgrow="ALWAYS" />
-                                    <Button fx:id="btnRefreshProduits" mnemonicParsing="false" styleClass="btn-secondary" text="Actualiser" />
+                                    <Label styleClass="section-title" text="Filtrer les annonces"/>
+                                    <ComboBox fx:id="produitFiltreCombo" prefWidth="184.0" styleClass="admin-combo"/>
+                                    <Region HBox.hgrow="ALWAYS"/>
+                                    <Button fx:id="btnRefreshProduits" mnemonicParsing="false"
+                                            styleClass="btn-secondary" text="Actualiser"/>
                                 </HBox>
                                 <VBox styleClass="admin-table-shell" VBox.vgrow="ALWAYS">
-                                    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="admin-scroll" VBox.vgrow="ALWAYS">
+                                    <ScrollPane fitToWidth="true" hbarPolicy="NEVER"
+                                                styleClass="admin-scroll" VBox.vgrow="ALWAYS">
                                         <VBox fx:id="produitsCardsBox" spacing="12.0" styleClass="admin-cards-stack">
-                                            <padding>
-                                                <Insets bottom="12.0" left="10.0" right="14.0" top="10.0" />
-                                            </padding>
+                                            <padding><Insets bottom="12.0" left="10.0" right="14.0" top="10.0"/></padding>
                                         </VBox>
                                     </ScrollPane>
                                 </VBox>
                                 <HBox alignment="CENTER_LEFT" spacing="14.0" styleClass="admin-actions-card">
-                                    <Button fx:id="btnApprouver" mnemonicParsing="false" styleClass="btn-primary" text="Approuver" />
-                                    <Button fx:id="btnRefuser" mnemonicParsing="false" styleClass="btn-primary" text="Refuser" />
-                                    <Label styleClass="admin-hint" text="Sélectionnez une carte « En attente » pour activer les actions." wrapText="true" />
+                                    <Button fx:id="btnApprouver" mnemonicParsing="false"
+                                            styleClass="btn-primary" text="Approuver"/>
+                                    <Button fx:id="btnRefuser" mnemonicParsing="false"
+                                            styleClass="btn-primary" text="Refuser"/>
+                                    <Label styleClass="admin-hint"
+                                           text="Sélectionnez une carte « En attente » pour activer les actions."
+                                           wrapText="true"/>
                                 </HBox>
                             </VBox>
+
+                            <!-- ══════════════ PANEL FACTURES (NOUVEAU) ══════════════ -->
+                            <VBox fx:id="panelFactures" spacing="14.0">
+
+                                <!-- Toolbar : recherche + actualiser -->
+                                <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="admin-toolbar-card">
+                                    <Label styleClass="section-title" text="Toutes les factures"/>
+                                    <TextField fx:id="factureSearchField"
+                                               promptText="🔍  Rechercher par ID commande ou client…"
+                                               onAction="#handleFactureSearch"
+                                               styleClass="search-field"
+                                               prefWidth="300"/>
+                                    <Button mnemonicParsing="false" onAction="#handleFactureSearch"
+                                            styleClass="btn-secondary" text="Rechercher"/>
+                                    <Button mnemonicParsing="false" onAction="#handleFactureClear"
+                                            styleClass="btn-secondary" text="✕"/>
+                                    <Region HBox.hgrow="ALWAYS"/>
+                                    <Button fx:id="btnRefreshFactures" mnemonicParsing="false"
+                                            styleClass="btn-secondary" text="Actualiser"/>
+                                </HBox>
+
+                                <!-- Liste des factures -->
+                                <VBox styleClass="admin-table-shell" VBox.vgrow="ALWAYS">
+                                    <ScrollPane fitToWidth="true" hbarPolicy="NEVER"
+                                                styleClass="admin-scroll" VBox.vgrow="ALWAYS">
+                                        <VBox fx:id="facturesCardsBox" spacing="12.0" styleClass="admin-cards-stack">
+                                            <padding><Insets bottom="12.0" left="10.0" right="14.0" top="10.0"/></padding>
+                                        </VBox>
+                                    </ScrollPane>
+                                </VBox>
+
+                            </VBox>
+                            <!-- ══════════════ FIN PANEL FACTURES ══════════════ -->
+
                         </StackPane>
                     </VBox>
                 </center>
@@ -127,16 +184,14 @@
 
     </BorderPane>
 
-    <!-- 🐱 Cat peek overlay — bottom-right -->
+    <!-- 🐱 Cat peek overlay -->
     <ImageView fx:id="catPeek"
                fitWidth="150"
                preserveRatio="true"
                mouseTransparent="true"
                translateY="160"
                StackPane.alignment="BOTTOM_RIGHT">
-        <image>
-            <Image url="@../images/cat-movement.gif" />
-        </image>
+        <image><Image url="@../images/cat-movement.gif"/></image>
     </ImageView>
 
 </StackPane>
